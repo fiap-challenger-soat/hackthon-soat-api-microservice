@@ -1,0 +1,43 @@
+#version: '3.8'
+
+services:
+  payments:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - payment-network
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:6.0
+    container_name: payment-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: payment_db
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - payment-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  payment-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:

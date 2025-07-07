@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: {SPRING_DATA_MONGODB_URI:mongodb://root:example@localhost:27017/payment_db?authSource=admin}
+      database: {SPRING_DATA_MONGODB_DATABASE:payment_db}
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+
+  application:
+    name: payment-service
+
+payment:
+  mercadopago:
+    url: {MERCADO_PAGO_URL}
+    notification_url: {MERCADO_PAGO_NOTIFICATION_URL}
+    access_token: {MERCADO_PAGO_ACCESS_TOKEN}
+
