@@ -1,22 +1,33 @@
-server:
-  port: 8080
-
 spring:
-  data:
-    mongodb:
-      uri: {SPRING_DATA_MONGODB_URI:mongodb://root:example@localhost:27017/payment_db?authSource=admin}
-      database: {SPRING_DATA_MONGODB_DATABASE:payment_db}
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
-
   application:
-    name: payment-service
+    name: fast-food
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:schema.sql
+server:
+  servlet:
+    context-path: /video-api
 
-payment:
-  mercadopago:
-    url: {MERCADO_PAGO_URL}
-    notification_url: {MERCADO_PAGO_NOTIFICATION_URL}
-    access_token: {MERCADO_PAGO_ACCESS_TOKEN}
+springdoc:
+  api-docs:
+    path: /v1/api-docs
 
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+
+app:
+  api:
+    gateway:
+      url: ${API_GATEWAY_URL}

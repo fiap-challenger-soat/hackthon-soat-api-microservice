@@ -1,4 +1,4 @@
-package payment.microservice.domain;
+package video.microservice.domain;
 
 import lombok.*;
 

@@ -1,20 +1,13 @@
-package payment.microservice;
+package video.microservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
-import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
-@SpringBootApplication(
-        exclude = {
-                DataSourceAutoConfiguration.class,
-                HibernateJpaAutoConfiguration.class
-        }
-)
-@EnableMongoAuditing
-public class PaymentsApplication {
+@SpringBootApplication
+public class VideoApplication {
     public static void main(String[] args) {
-       SpringApplication.run(PaymentsApplication.class, args);
+       SpringApplication.run(VideoApplication.class, args);
     }
 }

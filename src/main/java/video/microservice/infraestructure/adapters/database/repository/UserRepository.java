@@ -1,7 +1,7 @@
-package payment.microservice.infraestructure.adapters.database.repository;
+package video.microservice.infraestructure.adapters.database.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import payment.microservice.infraestructure.adapters.database.entity.UserEntity;
+import video.microservice.infraestructure.adapters.database.entity.UserEntity;
 
 import java.util.Optional;
 import java.util.UUID;

@@ -1,7 +1,6 @@
-package payment.microservice.infraestructure.adapters.services.mercadopago.upstream.webhooks.response;
+package video.microservice.infraestructure.adapters.services.mercadopago.upstream.webhooks.response;
 
 import org.junit.jupiter.api.Assertions;
-import payment.microservice.infraestructure.adapters.rest.response.PaymentStatusResponse;
 
 import java.util.ArrayList;
 

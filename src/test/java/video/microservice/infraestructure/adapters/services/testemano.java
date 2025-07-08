@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.services;
+package video.microservice.infraestructure.adapters.services;
 
 public class testemano {
 }

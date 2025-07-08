@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.services.util;
+package video.microservice.infraestructure.adapters.services.util;
 
 public class OrderItemDetailsTest {
 }

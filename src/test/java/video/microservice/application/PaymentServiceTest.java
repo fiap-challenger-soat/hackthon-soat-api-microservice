@@ -1,4 +1,4 @@
-package payment.microservice.application;
+package video.microservice.application;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;

@@ -1,4 +1,4 @@
-package payment.microservice.cucumber.stepdefinitions;
+package video.microservice.cucumber.stepdefinitions;
 
 import io.cucumber.java.en.*;
 import org.mockito.ArgumentCaptor;
@@ -7,7 +7,6 @@ import org.springframework.web.reactive.function.client.*;
 import payment.microservice.domain.capture.PaymentCapture;
 import payment.microservice.infraestructure.adapters.services.mercadopago.upstream.webhooks.MercadoPagoWebhook;
 import payment.microservice.infraestructure.adapters.rest.request.NotificationRequest;
-import payment.microservice.infraestructure.adapters.rest.response.PaymentStatusResponse;
 import reactor.core.publisher.Mono;
 
 import java.util.function.Function;

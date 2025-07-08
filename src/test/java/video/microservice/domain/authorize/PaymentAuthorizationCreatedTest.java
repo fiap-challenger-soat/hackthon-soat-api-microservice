@@ -1,4 +1,4 @@
-package payment.microservice.domain.authorize;
+package video.microservice.domain.authorize;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.database.repository;
+package video.microservice.infraestructure.adapters.database.repository;
 
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;

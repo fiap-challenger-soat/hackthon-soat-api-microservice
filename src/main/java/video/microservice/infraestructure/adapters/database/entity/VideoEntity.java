@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.database.entity;
+package video.microservice.infraestructure.adapters.database.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

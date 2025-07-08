@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.services.mercadopago.upstream.webhooks;
+package video.microservice.infraestructure.adapters.services.mercadopago.upstream.webhooks;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,6 @@ import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.WebClient;
 import payment.microservice.domain.capture.PaymentCapture;
 import payment.microservice.infraestructure.adapters.rest.request.NotificationRequest;
-import payment.microservice.infraestructure.adapters.rest.response.PaymentStatusResponse;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 

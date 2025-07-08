@@ -1,4 +1,4 @@
-package payment.microservice.cucumber.runners;
+package video.microservice.cucumber.runners;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;

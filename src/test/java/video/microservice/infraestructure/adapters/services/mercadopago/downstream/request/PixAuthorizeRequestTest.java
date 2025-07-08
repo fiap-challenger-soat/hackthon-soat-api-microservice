@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.services.mercadopago.downstream.request;
+package video.microservice.infraestructure.adapters.services.mercadopago.downstream.request;
 
 import org.junit.jupiter.api.Test;
 import payment.microservice.infraestructure.adapters.services.util.OrderItemDetails;

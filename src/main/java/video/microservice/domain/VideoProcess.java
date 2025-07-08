@@ -1,6 +1,8 @@
-package payment.microservice.domain;
+package video.microservice.domain;
 
 import org.springframework.web.multipart.MultipartFile;
+import video.microservice.infraestructure.adapters.rest.response.VideoDownloadResponse;
+import video.microservice.infraestructure.adapters.rest.response.VideoProcessResponse;
 
 import java.util.UUID;
 

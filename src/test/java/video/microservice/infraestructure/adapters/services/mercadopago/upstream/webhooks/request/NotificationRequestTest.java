@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.services.mercadopago.upstream.webhooks.request;
+package video.microservice.infraestructure.adapters.services.mercadopago.upstream.webhooks.request;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

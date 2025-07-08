@@ -1,4 +1,4 @@
-package payment.microservice.domain.capture;
+package video.microservice.domain.capture;
 
 public class PaymentCaptureInternalizeTest {
 }

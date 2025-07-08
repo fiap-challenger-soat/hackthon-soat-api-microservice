@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.rest;
+package video.microservice.infraestructure.adapters.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,7 +7,7 @@ import org.mockito.*;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import payment.microservice.application.VideoService;
+import video.microservice.application.VideoService;
 import payment.microservice.domain.authorize.PaymentAuthorizationInternalize;
 import payment.microservice.domain.capture.PaymentCaptureInternalize;
 import payment.microservice.domain.capture.PaymentCapture;

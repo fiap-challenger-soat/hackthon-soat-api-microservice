@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.services.mercadopago.downstream;
+package video.microservice.infraestructure.adapters.services.mercadopago.downstream;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

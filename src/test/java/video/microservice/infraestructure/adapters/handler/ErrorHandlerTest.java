@@ -1,4 +1,4 @@
-package payment.microservice.infraestructure.adapters.handler;
+package video.microservice.infraestructure.adapters.handler;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
