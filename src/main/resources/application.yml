@@ -1,4 +1,8 @@
 spring:
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
   application:
     name: fast-food
   datasource:
@@ -26,8 +30,19 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     tags-sorter: alpha
-
-app:
-  api:
-    gateway:
-      url: ${API_GATEWAY_URL}
+cloud:
+  aws:
+    credentials:
+      accessKey: ${AWS_SECRET_ACCESS_KEY:test}
+      secretKey: ${AWS_SECRET_ACCESS_KEY:test}
+    region:
+      static: ${AWS_SECRET_ACCESS_KEY:us-east-1}
+    stack:
+      auto: false
+    sqs:
+      endpoint: ${AWS_ENDPOINT:http://localhost:4566}
+    s3:
+      endpoint: ${AWS_ENDPOINT:http://localhost:4566}
+aws:
+  s3:
+    bucket: meus-videos

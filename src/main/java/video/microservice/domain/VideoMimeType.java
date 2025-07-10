@@ -1,5 +1,7 @@
 package video.microservice.domain;
 
+import java.util.Objects;
+
 public enum VideoMimeType {
 
     MP4("video/mp4"),
@@ -27,5 +29,14 @@ public enum VideoMimeType {
             }
         }
         return false;
+    }
+
+    public static VideoMimeType fromMime(String contentType) {
+        for (VideoMimeType value : VideoMimeType.values()) {
+            if (Objects.equals(value.getMimeType(), contentType)) {
+                return value;
+            }
+        }
+        return null;
     }
 }
