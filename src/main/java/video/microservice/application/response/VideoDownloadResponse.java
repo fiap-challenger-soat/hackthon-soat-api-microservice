@@ -1,4 +1,4 @@
-package video.microservice.infraestructure.adapters.rest.response;
+package video.microservice.application.response;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,9 @@
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URL:http://localhost:8080/realms/video}
   servlet:
     multipart:
       max-file-size: 500MB
@@ -22,6 +27,7 @@ spring:
 server:
   servlet:
     context-path: /video-api
+  port: 8080
 
 springdoc:
   api-docs:
@@ -33,10 +39,10 @@ springdoc:
 cloud:
   aws:
     credentials:
-      accessKey: ${AWS_SECRET_ACCESS_KEY:test}
+      accessKey: ${AWS_ACCESS_KEY_ID:test}
       secretKey: ${AWS_SECRET_ACCESS_KEY:test}
     region:
-      static: ${AWS_SECRET_ACCESS_KEY:us-east-1}
+      static: ${AWS_REGION:us-east-1}
     stack:
       auto: false
     sqs:
@@ -45,4 +51,6 @@ cloud:
       endpoint: ${AWS_ENDPOINT:http://localhost:4566}
 aws:
   s3:
-    bucket: meus-videos
+    bucket: ${S3_BUCKET:meus-videos}
+  sqs:
+    queue: ${SQS_BUCKET:video-queue}

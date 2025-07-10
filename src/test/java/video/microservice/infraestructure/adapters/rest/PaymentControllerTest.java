@@ -7,7 +7,7 @@ import org.mockito.*;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import video.microservice.application.VideoProcessServiceImpl;
+import video.microservice.infraestructure.adapters.process.OutVideoProcessAwsImpl;
 import payment.microservice.domain.authorize.PaymentAuthorizationInternalize;
 import payment.microservice.domain.capture.PaymentCaptureInternalize;
 import payment.microservice.domain.capture.PaymentCapture;
@@ -25,7 +25,7 @@ public class PaymentControllerTest {
     private MockMvc mockMvc;
 
     @Mock
-    private VideoProcessServiceImpl videoService;
+    private OutVideoProcessAwsImpl videoService;
     @InjectMocks
     private VideoApiController videoApiController;
 

@@ -18,7 +18,20 @@ services:
       - localstack_data:/var/lib/localstack
     networks:
       - app-network
-
+  keycloak:
+    image: quay.io/keycloak/keycloak:20.0.5
+    container_name: keycloak
+    command:
+      - "start-dev"
+      - "--import-realm"
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KEYCLOAK_IMPORT=/opt/keycloak/data/import/video-realm.json
+    volumes:
+      - ./keycloak/realms:/opt/keycloak/data/import
+    ports:
+      - "8081:8080"
   app:
     build:
       context: .
@@ -30,13 +43,11 @@ services:
       - AWS_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=test
       - AWS_SECRET_ACCESS_KEY=test
-      - AWS_SQS_QUEUE_URL=http://localhost:4566/000000000000/video-queue
-      - SPRING_PROFILES_ACTIVE=local
       - AWS_ENDPOINT=http://localhost:4566
-      - EMAIL=test@gmail.com
-      - EMAIL_PASSWORD=123
+      - S3_BUCKET=meus-videos
+      - SQS_BUCKET=video-queue
     ports:
-      - "8090:8090"
+      - "8080:8080"
     networks:
       - app-network
 

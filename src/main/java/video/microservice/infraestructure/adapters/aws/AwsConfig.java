@@ -10,10 +10,8 @@ import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.aws.messaging.config.annotation.EnableSqs;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @Configuration
 @Getter
@@ -37,6 +35,9 @@ public class AwsConfig {
 
     @Value("${aws.s3.bucket}")
     private String bucket;
+
+    @Value("${aws.sqs.queue}")
+    private String queue;
 
 
     @Bean

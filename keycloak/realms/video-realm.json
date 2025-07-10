@@ -1,0 +1,17 @@
+{
+  "realm": "video",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "usuario@example.com",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dd8b8926-08a4-4257-a272-2916a1d90353",
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "implicitFlowEnabled": false
+    }
+  ]
+}

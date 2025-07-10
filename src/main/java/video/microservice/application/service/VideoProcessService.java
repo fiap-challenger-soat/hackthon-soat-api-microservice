@@ -1,8 +1,8 @@
-package video.microservice.domain;
+package video.microservice.application.service;
 
 import org.springframework.web.multipart.MultipartFile;
-import video.microservice.infraestructure.adapters.rest.response.VideoDownloadResponse;
-import video.microservice.infraestructure.adapters.rest.response.VideoProcessResponse;
+import video.microservice.application.response.VideoDownloadResponse;
+import video.microservice.application.response.VideoProcessResponse;
 
 import java.io.IOException;
 import java.util.UUID;
