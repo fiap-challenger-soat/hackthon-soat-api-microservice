@@ -38,7 +38,7 @@ public class VideoProcessServiceImpl implements VideoProcessService {
     }
 
     @Override
-    public VideoDownloadResponse getVideoById(String videoId) {
-        return videoProcess.getVideoById(videoId);
+    public VideoDownloadResponse getVideoById(String videoId, String userId) {
+        return videoProcess.getVideoById(videoId, userId);
     }
 }

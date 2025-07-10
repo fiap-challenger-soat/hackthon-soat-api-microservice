@@ -10,5 +10,5 @@ import java.util.UUID;
 public interface OutVideoProcess {
     VideoProcessResponse processVideo(Video video, String userId) throws IOException;
     VideoProcessResponse getVideoStausById(UUID videoId, String userId);
-    VideoDownloadResponse getVideoById(String videoId);
+    VideoDownloadResponse getVideoById(String videoId, String userId);
 }

@@ -86,8 +86,8 @@ public class OutVideoProcessAwsImpl implements OutVideoProcess {
     }
 
     @Override
-    public VideoDownloadResponse getVideoById(String videoId) {
-        Optional<VideoEntity> videoEntity = videoRepository.findById(UUID.fromString(videoId));
+    public VideoDownloadResponse getVideoById(String videoId, String userId) {
+        Optional<VideoEntity> videoEntity = videoRepository.findByIdAndUserEmail(UUID.fromString(videoId), userId);
         if(videoEntity.isEmpty() || ObjectUtils.isEmpty(videoEntity.get().getOutputPath())){
                 throw new VideoException(HttpStatus.NOT_FOUND, "Video not found", "Not found");
             }

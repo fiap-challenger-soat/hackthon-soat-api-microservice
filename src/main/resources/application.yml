@@ -3,7 +3,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${ISSUER_URL:http://localhost:8080/realms/video}
+          issuer-uri: ${ISSUER_URL:http://localhost:8081/realms/video}
+          jwk-set-uri: ${JWK_URI:http://localhost:8081/realms/video/protocol/openid-connect/certs}
   servlet:
     multipart:
       max-file-size: 500MB
@@ -23,7 +24,7 @@ spring:
   sql:
     init:
       mode: always
-      data-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
 server:
   servlet:
     context-path: /video-api
