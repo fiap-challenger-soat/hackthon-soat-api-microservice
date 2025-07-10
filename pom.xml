@@ -10,9 +10,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>payment.microsservice</groupId>
-    <artifactId>payments</artifactId>
-    <version>1.0.1</version>
+    <groupId>video.microsservice</groupId>
+    <artifactId>hackthon-soat-api-microservice</artifactId>
+    <version>1.0.2</version>
 
     <properties>
         <sonar.organization>fiap-challenger-soat</sonar.organization>
