@@ -1,0 +1,57 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URL:http://localhost:8081/realms/video}
+          jwk-set-uri: ${JWK_URI:http://localhost:8081/realms/video/protocol/openid-connect/certs}
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+  application:
+    name: fast-food
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+server:
+  servlet:
+    context-path: /video-api
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v1/api-docs
+
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+cloud:
+  aws:
+    credentials:
+      accessKey: ${AWS_ACCESS_KEY_ID:test}
+      secretKey: ${AWS_SECRET_ACCESS_KEY:test}
+    region:
+      static: ${AWS_REGION:us-east-1}
+    stack:
+      auto: false
+    sqs:
+      endpoint: ${AWS_ENDPOINT:http://localhost:4566}
+    s3:
+      endpoint: ${AWS_ENDPOINT:http://localhost:4566}
+aws:
+  s3:
+    bucket: ${S3_BUCKET:meus-videos}
+  sqs:
+    queue: ${SQS_BUCKET:video-queue}
