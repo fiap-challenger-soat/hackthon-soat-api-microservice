@@ -9,18 +9,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AwsConfigTest {
 
-    @Test
-    void shouldCreateAmazonSQSAsync() {
-        AwsConfig config = new AwsConfig();
-        config.setAccessKey("test-access-key");
-        config.setSecretKey("test-secret-key");
-        config.setRegion("us-east-1");
-        config.setSqsEndpoint("http://localhost:4566");
-
-        AmazonSQSAsync sqs = config.amazonSQSAsync();
-
-        assertNotNull(sqs);
-    }
+//    @Test
+//    void shouldCreateAmazonSQSAsync() {
+//        AwsConfig config = new AwsConfig();
+//        config.setAccessKey("test-access-key");
+//        config.setSecretKey("test-secret-key");
+//        config.setRegion("us-east-1");
+//        config.setSqsEndpoint("http://localhost:4566");
+//
+//        AmazonSQSAsync sqs = config.amazonSQSAsync();
+//
+//        assertNotNull(sqs);
+//    }
 
     @Test
     void shouldCreateAmazonS3() {

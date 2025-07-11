@@ -1,5 +1,6 @@
 package video.microservice.infraestructure.adapters.aws.sqs;
 
+import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class SqsMessageSender {
     @Autowired
-    private AmazonSQSAsync amazonSQS;
+    private AmazonSQS amazonSQS;
 
     public void sendMessage(String messageBody, String queueName) {
         String queueUrl = amazonSQS.getQueueUrl(queueName).getQueueUrl();

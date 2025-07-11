@@ -54,6 +54,7 @@ class OutVideoProcessAwsImplTest {
         String userId = "user@example.com";
         String bucket = "bucket-test";
         when(awsConfig.getBucket()).thenReturn(bucket);
+        when(awsConfig.getQueue()).thenReturn("video-queue");
 
         UserEntity userEntity = new UserEntity();
         userEntity.setEmail(userId);

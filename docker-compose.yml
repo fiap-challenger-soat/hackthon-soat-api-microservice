@@ -8,6 +8,8 @@ services:
     command:
       - "start-dev"
       - "--import-realm"
+      - "--hostname-url=http://keycloak:8080/"
+      - "--hostname-strict=false"
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
