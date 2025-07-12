@@ -1,23 +1,6 @@
 version: "3.8"
 
 services:
-  localstack:
-    image: localstack/localstack:latest
-    container_name: localstack
-    ports:
-      - "4566:4566"
-      - "4571:4571"
-    environment:
-      - SERVICES=s3,sqs
-      - EDGE_PORT=4566
-      - DEFAULT_REGION=us-east-1
-      - AWS_ACCESS_KEY_ID=test
-      - AWS_SECRET_ACCESS_KEY=test
-    volumes:
-      - ./localstack/init:/etc/localstack/init/ready.d
-      - localstack_data:/var/lib/localstack
-    networks:
-      - app-network
   keycloak:
     image: quay.io/keycloak/keycloak:20.0.5
     container_name: keycloak
@@ -32,22 +15,27 @@ services:
       - ./keycloak/realms:/opt/keycloak/data/import
     ports:
       - "8081:8080"
+    networks:
+      - app-network
   app:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: spring-app
-    depends_on:
-      - localstack
     environment:
       - AWS_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=test
       - AWS_SECRET_ACCESS_KEY=test
-      - AWS_ENDPOINT=http://localhost:4566
-      - S3_BUCKET=meus-videos
-      - SQS_BUCKET=video-queue
+      - AWS_ENDPOINT=http://localstack:4566
+      - S3_BUCKET=bucket-videos
+      - SQS_BUCKET=work-queue
+      - DB_PASSWORD=password
+      - DB_URL=jdbc:postgresql://postgres:5432/video_db
+      - DB_USERNAME=user
+      - ISSUER_URL=http://keycloak:8080/realms/video
+      - JWK_URI=http://keycloak:8080/realms/video/protocol/openid-connect/certs
     ports:
-      - "8080:8080"
+      - "9090:9090"
     networks:
       - app-network
 
@@ -56,4 +44,4 @@ volumes:
 
 networks:
   app-network:
-    driver: bridge
+    external: true

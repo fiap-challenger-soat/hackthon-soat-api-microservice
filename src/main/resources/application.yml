@@ -3,8 +3,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${ISSUER_URL:http://localhost:8081/realms/video}
-          jwk-set-uri: ${JWK_URI:http://localhost:8081/realms/video/protocol/openid-connect/certs}
+          issuer-uri: http://localhost:8081/realms/video
+          jwk-set-uri: http://localhost:8081/realms/video/protocol/openid-connect/certs
   servlet:
     multipart:
       max-file-size: 500MB
@@ -12,9 +12,9 @@ spring:
   application:
     name: fast-food
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/video_db
+    username: user
+    password: password
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -28,7 +28,7 @@ spring:
 server:
   servlet:
     context-path: /video-api
-  port: 8080
+  port: 9090
 
 springdoc:
   api-docs:
@@ -52,6 +52,6 @@ cloud:
       endpoint: ${AWS_ENDPOINT:http://localhost:4566}
 aws:
   s3:
-    bucket: ${S3_BUCKET:meus-videos}
+    bucket: bucket-videos
   sqs:
-    queue: ${SQS_BUCKET:video-queue}
+    queue: work-queue
