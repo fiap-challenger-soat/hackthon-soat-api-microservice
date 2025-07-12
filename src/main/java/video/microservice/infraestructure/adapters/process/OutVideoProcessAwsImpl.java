@@ -56,7 +56,7 @@ public class OutVideoProcessAwsImpl implements OutVideoProcess {
         videoEntity.setCreatedAt(OffsetDateTime.now());
         videoEntity.setId(UUID.randomUUID());
         videoRepository.save(videoEntity);
-        sqsMessageSender.sendMessage(String.valueOf(videoEntity.getId()), "video-queue");
+        sqsMessageSender.sendMessage(String.valueOf(videoEntity.getId()), awsConfig.getQueue());
         VideoProcessResponse videoProcessResponse = new VideoProcessResponse();
         videoProcessResponse.setVideoId(String.valueOf(videoEntity.getId()));
         videoProcessResponse.setStatus(VideoStatus.QUEUED.getValue());
